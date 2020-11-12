@@ -124,6 +124,16 @@
     XCTAssertEqual(testObject.number, 333);
 }
 
+- (void)testTTT {
+    NSError *error = nil;
+    NSURL *url = [[NSURL alloc] initWithString:@"https://www.google.com"];
+//    NSURLRequest *url = [[NSURLRequest alloc] init];
+    [url aspect_hookSelector:@selector(absoluteString) withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> info){
+        NSLog(@"");
+    } error:&error];
+    [url absoluteString];
+}
+
 #pragma mark - test method
 
 - (ObjectiveCTestObject *)getTestObject

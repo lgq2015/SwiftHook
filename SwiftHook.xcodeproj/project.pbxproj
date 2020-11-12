@@ -38,6 +38,7 @@
 		2A5C8D5A24670C9400812DAD /* AllInstancesAfterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C8D5924670C9400812DAD /* AllInstancesAfterTests.swift */; };
 		2A5C8D5C24670CA500812DAD /* AllInstancesInsteadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C8D5B24670CA500812DAD /* AllInstancesInsteadTests.swift */; };
 		2A5C8D5E24670DC800812DAD /* MemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C8D5D24670DC800812DAD /* MemoryTests.swift */; };
+		2A5F8721255D756C00D06B19 /* ChangeObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F8720255D756C00D06B19 /* ChangeObjectTests.swift */; };
 		2A65762F2472BA9A00FE57CE /* TargetObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65762E2472BA9A00FE57CE /* TargetObjectExtension.swift */; };
 		2A65FB4B246800F800535203 /* HookInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65FB4A246800F800535203 /* HookInternal.swift */; };
 		2A7015112463F57200B81219 /* SHMethodSignatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7015102463F57200B81219 /* SHMethodSignatureTests.swift */; };
@@ -125,6 +126,7 @@
 		2A5C8D5924670C9400812DAD /* AllInstancesAfterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInstancesAfterTests.swift; sourceTree = "<group>"; };
 		2A5C8D5B24670CA500812DAD /* AllInstancesInsteadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInstancesInsteadTests.swift; sourceTree = "<group>"; };
 		2A5C8D5D24670DC800812DAD /* MemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTests.swift; sourceTree = "<group>"; };
+		2A5F8720255D756C00D06B19 /* ChangeObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeObjectTests.swift; sourceTree = "<group>"; };
 		2A65762E2472BA9A00FE57CE /* TargetObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetObjectExtension.swift; sourceTree = "<group>"; };
 		2A65FB4A246800F800535203 /* HookInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookInternal.swift; sourceTree = "<group>"; };
 		2A7015102463F57200B81219 /* SHMethodSignatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHMethodSignatureTests.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				2AFCFC0424F7D7E400F31C39 /* OrderTests.swift */,
 				2A562935250A8A1D00426C2F /* StructTests.swift */,
 				2A28021A2522DC02004F3291 /* VariableCaptureTests.swift */,
+				2A5F8720255D756C00D06B19 /* ChangeObjectTests.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				2AA23CB8247E6ED3003776FC /* AspectsSwiftTests.swift in Sources */,
 				2A8BB5092474458700942DDC /* ParametersCheckingTests.swift in Sources */,
 				2A2F212424758C7D0032A64D /* HookContextTests.swift in Sources */,
+				2A5F8721255D756C00D06B19 /* ChangeObjectTests.swift in Sources */,
 				2A5C8D5824670C6E00812DAD /* AllInstancesBeforeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
