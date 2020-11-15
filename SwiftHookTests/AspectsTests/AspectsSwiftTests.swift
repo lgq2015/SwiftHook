@@ -137,6 +137,25 @@ class AspectsSwiftTests: XCTestCase {
         }
     }
     
+    func testTimer() throws {
+        let obj = Timer.init(timeInterval: 1000, repeats: false) { (_) in
+            
+        }
+        XCTAssertNotNil(obj)
+        try obj.aspect_hook(#selector(Timer.description), with: .positionBefore, usingBlock: { _ in
+        } as @convention(block) (AspectInfo) -> Void)
+    }
+    
+    func testTimerNil() throws {
+        do {
+            let obj = Timer.init()
+            try obj.aspect_hook(#selector(Timer.description), with: .positionBefore, usingBlock: { _ in
+            } as @convention(block) (AspectInfo) -> Void)
+        } catch {
+            print("")
+        }
+    }
+    
     // MARK: utilities
     
     @objc dynamic func getRequest() -> NSURLRequest {

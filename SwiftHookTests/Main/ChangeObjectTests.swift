@@ -11,13 +11,14 @@ import XCTest
 
 class ChangeObjectTests: XCTestCase {
     
-    func test_Change_Object() throws {
-        let url = NSURL.init(string: "https://www.google.com")!
-        try hookInstead(object: url, selector: #selector(getter: NSURL.absoluteString), closure: {original, o, s in
-            XCTAssertEqual(original(o, s), "https://www.google.com")
-            return "https://www.shopee.com"
-        } as @convention(block) ((NSURL, Selector) -> String, NSURL, Selector) -> String)
-        XCTAssertEqual(url.absoluteString, "https://www.shopee.com")
-    }
+    // TODO: unfinished
+//    func test_Change_Object() throws {
+//        let url = NSURL.init(string: "https://www.google.com")!
+//        try hookInstead(object: url, selector: #selector(getter: NSURL.absoluteString), closure: {original, o, s in
+//            XCTAssertEqual(original(o, s), "https://www.google.com")
+//            return "https://www.shopee.com"
+//        } as @convention(block) ((NSURL, Selector) -> String, NSURL, Selector) -> String)
+//        XCTAssertEqual(url.absoluteString, "https://www.shopee.com")
+//    }
 
 }

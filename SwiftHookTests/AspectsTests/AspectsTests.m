@@ -11,6 +11,16 @@
 #import <objc/runtime.h>
 @import Aspects;
 
+@interface MyURL : NSURL
+
+@end
+
+@implementation MyURL
+
+
+@end
+
+
 @interface AspectsTests : XCTestCase
 
 @end
@@ -124,16 +134,6 @@
     XCTAssertEqual(testObject.number, 333);
 }
 
-- (void)testTTT {
-    NSError *error = nil;
-    NSURL *url = [[NSURL alloc] initWithString:@"https://www.google.com"];
-//    NSURLRequest *url = [[NSURLRequest alloc] init];
-    [url aspect_hookSelector:@selector(absoluteString) withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> info){
-        NSLog(@"");
-    } error:&error];
-    [url absoluteString];
-}
-
 #pragma mark - test method
 
 - (ObjectiveCTestObject *)getTestObject
@@ -166,6 +166,31 @@
 - (NSURLRequest *)getRequest
 {
     return [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.google.com"]];
+}
+
+- (void)testNSURL {
+    NSError *error = nil;
+    NSURL *obj = [[NSURL alloc] initWithString:@"https://www.google.com"];
+    XCTAssertNotNil(obj);
+    [obj aspect_hookSelector:@selector(host) withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> info){
+        NSLog(@"");
+    } error:&error];
+    XCTAssertNil(error);
+    BOOL result = [obj host];
+    NSLog(@"%@", @(result));
+}
+
+- (void)testNSTimer {
+    NSError *error = nil;
+    NSTimer *obj = [[NSTimer alloc] initWithFireDate:NSDate.now interval:11 repeats:NO block:^(NSTimer * _Nonnull timer) {
+    }];
+    XCTAssertNotNil(obj);
+    [obj aspect_hookSelector:@selector(userInfo) withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> info){
+        NSLog(@"");
+    } error:&error];
+    XCTAssertNil(error);
+    id result = [obj userInfo];
+    NSLog(@"%@", result);
 }
 
 @end
