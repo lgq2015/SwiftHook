@@ -17,15 +17,32 @@ import XCTest
  Timer.init():         Error                    Error                   Error                   Crash               Crash
  */
 
+class MyURL: NSURL {
+    
+}
+
+class MyView: UIView {
+    
+}
+
 class SpecialClassTests: XCTestCase {
 
-//    func testNSURL() throws {
-//        let url = NSURL.init(string: "https://www.google.com")!
+    func testNSURL() throws {
+        let url = MyURL.init(string: "https://www.google.com")!
 //        _ = try hookBefore(object: url, selector: #selector(getter: NSURL.host)) {
-//            
+//
 //        }
-//        let host = url.host
-//    }
+//        object_setClass(url, MyURL.self)
+        let host = url.host
+        print("")
+    }
+    
+    func testUIView() {
+        let view = UIView.init(frame: CGRect.init(x: 11, y: 22, width: 33, height: 44))
+        object_setClass(view, MyView.self)
+        let frame = view.frame
+        print("")
+    }
     
 //    func testTimer() throws {
 //        let timer = Timer.init(fire: Date.init(), interval: 1, repeats: false) { (_) in
